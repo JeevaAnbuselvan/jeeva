@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analysis Results</title>
+    <style>
+        .log-entry { margin: 5px 0; }
+        .failure { color: red; }
+        .error { color: darkred; }
+        .warning { color: orange; }
+        .crash { color: purple; }
+    </style>
+</head>
+<body>
+    <h1>Log Analysis Results</h1>
+    <ul>
+    {% for match in log_matches %}
+        <li class="log-entry {{ match.log_level }}">
+            <strong>{{ match.log_level | capitalize }}</strong> in <em>{{ match.file }}</em> at line {{ match.line_number }}: {{ match.message }}
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="/">Upload another file</a>
+</body>
+</html>
