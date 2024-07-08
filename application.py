@@ -19,7 +19,7 @@ def allowed_file(filename):
 
 def analyze_logs(directory):
     patterns = {
-        'failure': re.compile(r'failure', re.IGNORECASE),
+        'failure': re.compile(r'fail', re.IGNORECASE),
         'error': re.compile(r'error', re.IGNORECASE),
         'warning': re.compile(r'warning', re.IGNORECASE),
         'crash': re.compile(r'core_', re.IGNORECASE),
