@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 
 # Configuration
 UPLOAD_FOLDER = 'uploads'
-ALLOWED_EXTENSIONS = {'tar', 'tar.gz'}
+ALLOWED_EXTENSIONS = {'tar', 'tar.gz', 'gz'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'supersecretkey'
